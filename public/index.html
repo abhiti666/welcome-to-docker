@@ -4,16 +4,146 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Your first Docker container" />
+    <meta name="theme-color" content="#0d6efd" />
+    <meta name="description" content="Login to your Docker-powered app" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <title>Welcome to Docker</title>
+    <title>Login | Docker App</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #0d6efd, #6610f2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+      }
+
+      .login-container {
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .login-container h2 {
+        margin-bottom: 20px;
+        color: #0d6efd;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+
+      .captcha-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .captcha-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+
+      .captcha-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      .captcha-code {
+        font-family: monospace;
+        font-size: 1.2rem;
+        background-color: #f0f0f0;
+        padding: 8px;
+        border-radius: 6px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #0d6efd;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .login-btn:hover {
+        background-color: #0b5ed7;
+      }
+
+      .icon {
+        font-size: 2rem;
+        color: #0d6efd;
+        margin-bottom: 10px;
+      }
+
+      .forgot-password {
+        margin-top: 10px;
+        display: block;
+        font-size: 0.9rem;
+        color: #6610f2;
+        text-decoration: none;
+      }
+
+      .forgot-password:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div class="login-container">
+      <i class="fas fa-user-lock icon"></i>
+      <h2>Login</h2>
+      <form>
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="captcha-group">
+          <label class="captcha-label">Enter the code below:</label>
+          <div class="captcha-code">X7K9Q</div>
+          <input type="text" name="captcha" placeholder="Enter CAPTCHA" required />
+        </div>
+
+        <button type="submit" class="login-btn">Sign In</button>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+      </form>
+    </div>
   </body>
 </html>
